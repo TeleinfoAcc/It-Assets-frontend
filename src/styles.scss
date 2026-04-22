@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "@ng-select/ng-select/themes/default.theme.css";
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.success-snackbar {
+    --mdc-snackbar-container-color: #6cc24a;
+    --mat-snack-bar-button-color: #ff0000;
+    --mdc-snackbar-supporting-text-color: #fff;
+
+}
+
+.warning-snackbar {
+    --mdc-snackbar-container-color: #ffcc00e5;
+    --mat-snack-bar-button-color: #ff0000;
+    --mdc-snackbar-supporting-text-color: #000000;
+
+}
+
+.error-snackbar {
+    --mdc-snackbar-container-color: #c40202;
+    --mat-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: #fff;
+
+}

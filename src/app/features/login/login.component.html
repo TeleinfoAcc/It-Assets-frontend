@@ -1,0 +1,52 @@
+<div class="min-h-screen flex items-center justify-center px-4"
+    style="background: linear-gradient(135deg, #6ec6f0 0%, #7dd8b0 100%)">
+    <div class="w-[420px] max-w-[92%] bg-white rounded-2xl shadow-2xl p-10">
+
+        <!-- Logo & Title -->
+        <div class="flex flex-col items-center mb-6">
+            <div class="flex items-center gap-3 mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-500" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                        d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" />
+                </svg>
+                <span class="text-2xl font-bold text-blue-600">KB Cloud Storage</span>
+            </div>
+            <p class="text-gray-500 text-sm">เข้าสู่ระบบเพื่อใช้งาน</p>
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)" class="space-y-4">
+
+            <!-- Username -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Username</label>
+                <input type="text" formControlName="login" placeholder="กรอก Username"
+                    class="w-full h-10 px-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-400" />
+            </div>
+
+            <!-- Password -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                <input type="password" formControlName="password" placeholder="กรอก Password"
+                    class="w-full h-10 px-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-400" />
+            </div>
+
+            <!-- Project -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">เลือก Project</label>
+                <ng-select [items]="project" bindLabel="proj_name" bindValue="proj_id" formControlName="proj_id"
+                    [searchable]="true" [clearable]="false" placeholder="เลือก Project">
+                </ng-select>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit"
+                class="w-full h-11 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg transition-colors mt-2">
+                เข้าสู่ระบบ
+            </button>
+
+        </form>
+
+        <p class="text-center text-xs text-gray-400 mt-6">© 2026 KB Cloud Storage</p>
+    </div>
+</div>
