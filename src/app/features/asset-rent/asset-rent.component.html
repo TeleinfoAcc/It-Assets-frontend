@@ -1,0 +1,58 @@
+<div class="p-6">
+
+    <!-- Header -->
+    <div class="mb-4 flex items-center justify-between">
+        <h2 class="text-xl font-semibold text-gray-700">IT Assets</h2>
+    </div>
+
+    <!-- Table -->
+    <div class="overflow-x-auto rounded-lg shadow">
+        <table class="min-w-full bg-white text-sm text-gray-700">
+            <thead class="bg-gray-50 text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                <tr>
+                    <th class="px-4 py-3 text-left whitespace-nowrap">Edit</th>
+                    <th class="px-4 py-3 text-left whitespace-nowrap">IT Asset Code</th>
+                    <th class="px-4 py-3 text-left whitespace-nowrap">Serialnumber</th>
+                    <th class="px-4 py-3 text-left whitespace-nowrap">Comp Name</th>
+                    <th class="px-4 py-3 text-left whitespace-nowrap">Local IP</th>
+                    <th class="px-4 py-3 text-left whitespace-nowrap">Domain IP</th>
+                    <th class="px-4 py-3 text-left whitespace-nowrap">Comp Brand</th>
+                    <th class="px-4 py-3 text-left whitespace-nowrap">Comp Model</th>
+                    <th class="px-4 py-3 text-left whitespace-nowrap">Room</th>
+                    <th class="px-4 py-3 text-left whitespace-nowrap">Asset ID</th>
+                    <th class="px-4 py-3 text-left whitespace-nowrap">Status</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+                @for (asset of assets; track asset.it_asset_id) {
+                <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="px-4 py-3">
+                        <button (click)="onEdit(asset)" class="text-blue-500 hover:text-blue-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15.232 5.232l3.536 3.536M9 13l6.586-6.586a2 2 0 012.828 2.828L11.828 15.828a2 2 0 01-1.415.586H9v-2a2 2 0 01.586-1.414z" />
+                            </svg>
+                        </button>
+                    </td>
+                    <td class="px-4 py-3">{{ asset.it_asset_id }}</td>
+                    <td class="px-4 py-3">{{ asset.serialnumber }}</td>
+                    <td class="px-4 py-3">{{ asset.com_name }}</td>
+                    <td class="px-4 py-3">{{ asset.com_local_ip }}</td>
+                    <td class="px-4 py-3">{{ asset.com_join_ip }}</td>
+                    <td class="px-4 py-3">{{ asset.com_brand }}</td>
+                    <td class="px-4 py-3">{{ asset.com_model }}</td>
+                    <td class="px-4 py-3">{{ asset.location }}</td>
+                    <td class="px-4 py-3">{{ asset.gl_asset_code }}</td>
+                    <td class="px-4 py-3">{{ asset.com_status }}</td>
+                </tr>
+                } @empty {
+                <tr>
+                    <td colspan="11" class="px-4 py-6 text-center text-gray-400">ไม่พบข้อมูล</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

@@ -38,32 +38,19 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.getProjects();
 
-  }
-
-  getProjects() {
-    this.api.getProjectsonQamon().subscribe({
-      next: (response: any) => {
-        this.project = Array.isArray(response) ? response : response.data;
-        // console.log('Projects loaded:', this.project);
-      },
-      error: error => {
-        console.error('Failed to load projects:', error);
-      }
-    });
   }
 
   onLogin(loginData: any) {
     this.authService.login(loginData).subscribe({
       next: response => {
+        this.router.navigate(['/assets']);
         const pms = Number(sessionStorage.getItem('pms_id'));
-        if (pms === 2) {
-          const slug = sessionStorage.getItem('proj_slug');
-          this.router.navigate(['/projects', slug]);
-        } else {
-          this.router.navigate(['/projects']);
-        }
+        // if (pms === 2) {
+        //   this.router.navigate(['/agents']);
+        // } else {
+        //   this.router.navigate(['/server']);
+        // }
       },
       error: error => {
         this.snakbar.open('Login failed. ' + error.error.message, 'Close', {

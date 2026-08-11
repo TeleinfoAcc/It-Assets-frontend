@@ -17,7 +17,7 @@ export const authGuard: CanActivateFn = (route, state) => {
   const projIdRaw = sessionStorage.getItem('proj_id');
 
   // admin (pms=1) => เข้าทุกหน้าได้
-  if (pms === 1 || pms === 3 || pms === 4) {
+  if (pms === 8) {
     return true;
   }
 

@@ -1,0 +1,8 @@
+
+FROM node:18-alpine AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+# สั่งรันด้วยการเปิดโหมดคอยตรวจจับไฟล์ และเปิดให้เข้าถึงจากข้างนอกได้ (0.0.0.0)
+CMD ["npx", "ng", "serve", "--host", "0.0.0.0", "--poll", "2000"]

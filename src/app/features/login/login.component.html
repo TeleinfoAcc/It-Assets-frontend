@@ -31,14 +31,6 @@
                     class="w-full h-10 px-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-400" />
             </div>
 
-            <!-- Project -->
-            <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">เลือก Project</label>
-                <ng-select [items]="project" bindLabel="proj_name" bindValue="proj_id" formControlName="proj_id"
-                    [searchable]="true" [clearable]="false" placeholder="เลือก Project">
-                </ng-select>
-            </div>
-
             <!-- Submit -->
             <button type="submit"
                 class="w-full h-11 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg transition-colors mt-2">

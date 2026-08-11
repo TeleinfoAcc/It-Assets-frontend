@@ -2,6 +2,10 @@ import { Routes } from '@angular/router';
 import { MainlayoutComponent } from './mainlayout/mainlayout/mainlayout.component';
 import { authGuard } from './core/guards/auth.guard';
 import { LoginComponent } from './features/login/login.component';
+import { AssetsComponent } from './features/assets/assets.component';
+import { AssetRentComponent } from './features/asset-rent/asset-rent.component';
+import { UpdateAssetsComponent } from './features/update-assets/update-assets.component';
+import { UpdateAssetsRentComponent } from './features/update-assets-rent/update-assets-rent.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -11,9 +15,10 @@ export const routes: Routes = [
         component: MainlayoutComponent,
         canActivate: [authGuard],
         children: [
-            // ✅ เพิ่มแค่นี้
-            // { path: 'projects', component: ProjectListComponent },
-            // { path: 'projects/:slug', component: ProjectViewComponent },
+            { path: 'assets', component: AssetsComponent },
+            { path: 'asset-rent', component: AssetRentComponent },
+            { path: 'update-assets', component: UpdateAssetsComponent },
+            { path: 'update-assets-rent', component: UpdateAssetsRentComponent },
         ]
     },
     // { path: '**', component: DashboardComponent },
