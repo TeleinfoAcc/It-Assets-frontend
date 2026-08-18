@@ -84,6 +84,24 @@ export interface Site {
   is_active: number;
 }
 
+export interface ProjectCount {
+  asset_project: string;
+  count: number;
+}
+
+export interface DashboardData {
+  aio_broke_count: number;
+  aio_count: number;
+  aio_on_stock_count: number;
+  aio_usage_count: number;
+  notebook_broke_count: number;
+  notebook_count: number;
+  notebook_on_stock_count: number;
+  notebook_usage_count: number;
+  project_count: ProjectCount[];
+  total_assets: number;
+}
+
 @Injectable({ providedIn: 'root' })
 export class ApiService {
   // private apiUrl = 'http://localhost:8000/api';
@@ -111,5 +129,8 @@ export class ApiService {
     return this.http.get<{ assets_rent: AssetRent[] }>(`${this.apiUrl}getAssetsRent`);
   }
 
+  getDashboardData(): Observable<DashboardData> {
+    return this.http.get<DashboardData>(`${this.apiUrl}getDashboardData`);
+  }
 
 }

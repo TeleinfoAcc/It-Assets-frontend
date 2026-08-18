@@ -35,6 +35,7 @@ export class NavbarComponent {
 
     if (this.isAdmin) {
       this.navItems = [
+        { label: 'Dashboard', path: '/dashboard', icon: '../../../assets/Icon_checklist/white/data storage.png' },
         { label: 'Assets', path: '/assets', icon: '../../../assets/Icon_checklist/white/data storage.png' },
         { label: 'Assets-Rent', path: '/asset-rent', icon: '../../../assets/Icon_checklist/white/data storage.png' },
       ];

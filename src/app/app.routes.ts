@@ -6,6 +6,7 @@ import { AssetsComponent } from './features/assets/assets.component';
 import { AssetRentComponent } from './features/asset-rent/asset-rent.component';
 import { UpdateAssetsComponent } from './features/update-assets/update-assets.component';
 import { UpdateAssetsRentComponent } from './features/update-assets-rent/update-assets-rent.component';
+import { DashboardComponent } from './features/dashboard/dashboard.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -15,6 +16,7 @@ export const routes: Routes = [
         component: MainlayoutComponent,
         canActivate: [authGuard],
         children: [
+            { path: 'dashboard', component: DashboardComponent },
             { path: 'assets', component: AssetsComponent },
             { path: 'asset-rent', component: AssetRentComponent },
             { path: 'update-assets', component: UpdateAssetsComponent },
