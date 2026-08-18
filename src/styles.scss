@@ -14,6 +14,21 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.search-box {
+    border: 1px solid #000000;
+    border-radius: 4px;
+    background-color: #fffffffb;
+    padding: 10px;
+    font-size: small;
+
+}
+
+.search-label {
+    font-size: 12px;
+    color: #A1A1A1;
+}
+
+
 .success-snackbar {
     --mdc-snackbar-container-color: #6cc24a;
     --mat-snack-bar-button-color: #ff0000;
